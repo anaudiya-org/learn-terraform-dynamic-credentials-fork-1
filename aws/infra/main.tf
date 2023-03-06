@@ -1,5 +1,10 @@
 provider "aws" {
   region = var.aws_region
+  default_tags {
+    tags = {
+      aws-default-tags = "true"
+    }
+  }  
 }
 
 data "aws_ami" "amazon_linux" {
