@@ -25,5 +25,11 @@ resource "aws_instance" "web" {
     echo "<html><body><div>Hello, world!</div></body></html>" > /var/www/html/index.html
     EOF
 
-  tags = var.tags
+  tags = {
+    Name            = "ec2-tag-testing-instance"
+    a_Solution      = "TaggingSolution"
+    a_Environment   = "uat01"
+    Creator         = "amit.naudiyal"
+  }	
+
 }
